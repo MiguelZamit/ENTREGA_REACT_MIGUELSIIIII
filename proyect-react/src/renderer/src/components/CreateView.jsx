@@ -3,23 +3,18 @@ import { useState } from "react";
 
 import "../assets/style.css"
 
-// Usare tambien aqui filtered tasks para porque es la que uso en CreateElement porque sino buscara en una lista vacia
-
 export default function CreateView({ tasks, setTasks, setFilteredTasks, setIds, ids }) {
 
 
     function getLastId() {
         if (tasks.length === 0) {
-            return 0; // Si no hay tareas, el primer ID será 0
+            return 0; 
         }
-        // Encuentra el ID más alto en las tareas
+     
         return Math.max(...tasks.map(task => task.id));
     }
 
-
-
     const navigate = useNavigate();
-
     const [formValues, setFormValues] = useState({
         title: "",
         description: "",
@@ -27,7 +22,6 @@ export default function CreateView({ tasks, setTasks, setFilteredTasks, setIds, 
         deadline: "",
     });
 
-    // Maneja cambios en los campos del formulario
     function handleInputChange(event) {
         const { name, value } = event.target;
         setFormValues({
@@ -55,7 +49,7 @@ export default function CreateView({ tasks, setTasks, setFilteredTasks, setIds, 
             status: formValues.status,
             deadline,
             isChecked: false,
-            id: id, // Asigna el nuevo ID
+            id: id, 
             date: new Date().toISOString(),
         };
 
@@ -89,15 +83,14 @@ export default function CreateView({ tasks, setTasks, setFilteredTasks, setIds, 
     return (
         <>
 
+            <div id="container" >
 
+                <div className="d-flex flex-column align-items-center justify-content-center vh-100">
+                    <form action="" onSubmit={handleCreateTask}>
+                        <p className="text"> Creation View</p>
 
-            <div className="d-flex justify-content-center align-items-center">
+                        <div className="d-flex flex-column align-items-center justify-content-center" id="contents">
 
-                <form action="" onSubmit={handleCreateTask}>
-                    
-                        <p className="text"> Creation Wiew</p>
-
-                        <div id="contents" >
 
                             <label>Title</label>
 
@@ -167,10 +160,17 @@ export default function CreateView({ tasks, setTasks, setFilteredTasks, setIds, 
                                 </button>
                             </div>
 
-                        </div>
 
-                </form>
+                        </div>
+                    </form>
+
+                </div>
+
+
+
             </div>
+
+
 
 
         </>

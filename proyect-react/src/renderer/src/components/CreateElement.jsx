@@ -5,8 +5,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../assets/style.css"
 import { useNavigate } from "react-router-dom";
 
-
-// Aqui hay que añadir los outlined para motrarlos en el "aside"
 import {
     PlusOutlined,
     CheckCircleOutlined,
@@ -51,7 +49,7 @@ export default function CreateElement({ tasks, setTasks, originalTasks, setOrigi
         },
         {
             key: '6',
-            icon: <EyeOutlined />, // En un futuro hacerle tooltip
+            icon: <EyeOutlined />, 
             label: 'Hide/Show',
             onClick: () => hideShowCompletedAndCanceled()
         },
@@ -65,7 +63,7 @@ export default function CreateElement({ tasks, setTasks, originalTasks, setOrigi
             i === index ? { ...task, isChecked: !task.isChecked } : task
         );
         setTasks(updatedTasks);
-        setOriginalTasks(updatedTasks); // Actualizar lista original
+        setOriginalTasks(updatedTasks); 
         setFilteredTasks(updatedTasks)
 
 
@@ -76,8 +74,8 @@ export default function CreateElement({ tasks, setTasks, originalTasks, setOrigi
             task.isChecked ? { ...task, status: newStatus, isChecked: false } : task
         );
         setTasks(updatedTasks);
-        setOriginalTasks(updatedTasks); // Asegurar consistencia
-        setFilteredTasks(updatedTasks); // Asegurar consistencia con el filtro activo
+        setOriginalTasks(updatedTasks); 
+        setFilteredTasks(updatedTasks); 
 
         updatedTasks.forEach(task => {
 
@@ -90,7 +88,7 @@ export default function CreateElement({ tasks, setTasks, originalTasks, setOrigi
     function handleFilterByTitle() {
         const titleFilter = document.getElementById("iptTitle").value.trim();
         if (titleFilter === "") {
-            setFilteredTasks(originalTasks); // Restaurar todas las tareas
+            setFilteredTasks(originalTasks); 
             return;
         }
 
@@ -104,7 +102,7 @@ export default function CreateElement({ tasks, setTasks, originalTasks, setOrigi
     function handleFilterByStatus() {
         const statusFilter = document.getElementById("iptStatus").value.trim();
         if (statusFilter === "") {
-            setFilteredTasks(originalTasks); // Restaurar todas las tareas
+            setFilteredTasks(originalTasks); 
             return;
         }
 
@@ -166,14 +164,11 @@ export default function CreateElement({ tasks, setTasks, originalTasks, setOrigi
                             <div
                                 style={{
                                     padding: 24,
-                                    minHeight: 860,
+                                    minHeight: 930,
                                     background: colorBgContainer,
                                     borderRadius: borderRadiusLG,
                                 }}
                             >
-
-
-                               
 
                                     <button
                                         className="btn btn-secondary dropdown-toggle"
@@ -186,7 +181,7 @@ export default function CreateElement({ tasks, setTasks, originalTasks, setOrigi
                                     <small style={{ color: "grey", fontFamily: "monospace", marginLeft: "4px" }}>
                                         Remove the text from the filter to recover the cards info
                                     </small>
-                                    <ul className="dropdown-menu dropdown-menu-dark">
+                                    <ul className="dropdown-menu dropdown-menu-dark p-2">
                                         <li>
                                             <div className="input-group mb-3">
                                                 <input
@@ -307,7 +302,7 @@ export default function CreateElement({ tasks, setTasks, originalTasks, setOrigi
                                                                     <TaskItem
                                                                         key={task.id}
                                                                         task={task}
-                                                                        index={index + 1} // En vez de hacerlo desde 0 lo hago desde 1
+                                                                        index={index + 1} 
                                                                         handleDelete={handleDelete}
                                                                         handleCheckboxChange={handleCheckboxChange}
                                                                     />

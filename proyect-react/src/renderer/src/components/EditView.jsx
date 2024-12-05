@@ -6,7 +6,7 @@ import "../assets/style.css"
 export default function EditView({ tasks, setTasks, handleDeleteEdit, setFilteredTasks }) {
     const navigate = useNavigate();
     const { itemId } = useParams();
-    const itemIdToNumeric = Number(itemId); // Asegúrate de que el ID se corresponda con el objeto de la tarea
+    const itemIdToNumeric = Number(itemId); 
 
     const [taskDetails, setTaskDetails] = useState({
         name: "",
@@ -17,7 +17,7 @@ export default function EditView({ tasks, setTasks, handleDeleteEdit, setFiltere
 
     const [unsavedChanges, setUnsavedChanges] = useState(false); 
 
-    // Precargar los datos de la tarea cuando se monta el componente
+    
     useEffect(() => {
         const task = tasks.find((task) => task.id === itemIdToNumeric);
         if (task) {
@@ -77,7 +77,7 @@ export default function EditView({ tasks, setTasks, handleDeleteEdit, setFiltere
     }
 
 
-    // No se como optimizar esto
+    
     function handleChangeName(e) {
 
         setTaskDetails({ ...taskDetails, name: e.target.value })
@@ -112,7 +112,7 @@ export default function EditView({ tasks, setTasks, handleDeleteEdit, setFiltere
 
         if (!unsavedChanges) {
 
-            navigate("/") // Volvemos si no ha cambiado nada
+            navigate("/") 
 
         } else {
             window.api
@@ -121,9 +121,9 @@ export default function EditView({ tasks, setTasks, handleDeleteEdit, setFiltere
                 )
                 .then((value) => {
                     if (value.response === 0) {
-                        handleSave(); // Guardar antes de volver
+                        handleSave();
                     } else if (value.response === 1) {
-                        navigate("/"); // Volver sin guardar
+                        navigate("/"); 
                     }
                 });
 
