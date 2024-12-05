@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito:ital,wght@0,700;1,700&display=swap');
+.background {
+    background: linear-gradient(45deg, grey, #8f94fb);
+    
+    margin: 0;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+// Este es para las vistas
+#container {
+    background: linear-gradient(90deg, black, lightgrey);
+}
+
+
+.text {
+
+    text-align: center !important;
+    font-size: xx-large !important;
+    font-family: "Anton" , sans-serif !important;
+    margin-bottom: -2px !important;
+    color: transparent;
+    background-image: linear-gradient(20deg, lightgrey, black);
+    background-clip: text;
+    font-style: italic;
+    
+
+}
+
+.iptTitle{
+
+    margin-bottom: 20px;
+    
+}
+
+
+#createButons{
+
+    gap: 20px;
+
+}
+
+.acss-ozo177{
+
+    padding: 6px !important;
+
+}
+
+#contents{
+
+    width: 350px;
+    border: solid 2px;
+    padding: 5px;
+
+}
+
+form{
+
+width: 500px;
+
+}
+
+.title{
+
+    padding-bottom: 100px;
+
+}
+
+.button {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #34974d;
+    background-color: #3aa856;
+}
+
+.button,
+.button__icon,
+.button__text {
+    transition: all 0.3s;
+}
+
+.button .button__text {
+    transform: translateX(30px);
+    color: #fff;
+    font-weight: 600;
+}
+
+.button .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: #34974d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button .svg {
+    width: 30px;
+    stroke: #fff;
+}
+
+.button:hover {
+    background: #34974d;
+}
+
+.button:hover .button__text {
+    color: transparent;
+}
+
+.button:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+}
+
+.button:active .button__icon {
+    background-color: #2e8644;
+}
+
+.button:active {
+    border: 1px solid #2e8644;
+}
+
+small{
+
+    color: grey;
+    padding-left: 10px;
+
+}
+
+
+@import "../../.././../node_modules/bootstrap/scss/bootstrap.scss"
